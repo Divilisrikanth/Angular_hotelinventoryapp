@@ -1,4 +1,4 @@
-import { AfterViewChecked, AfterViewInit, Component, DoCheck, OnInit, QueryList, SimpleChanges, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, DoCheck, OnInit, Optional, QueryList, SimpleChanges, ViewChild, ViewChildren } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { Room } from './rooms';
 import { RoomList } from './rooms';
@@ -11,7 +11,6 @@ import { RoomsService } from './services/rooms.service';
   styleUrls: ['./rooms.component.scss']
 })
 export class RoomsComponent implements OnInit, DoCheck, AfterViewInit, AfterViewChecked {
-  [x: string]: any;
   hotelName = 'Hilton Hotel';
 
   numberOfRooms = 10;
@@ -47,7 +46,7 @@ export class RoomsComponent implements OnInit, DoCheck, AfterViewInit, AfterView
   }
 
   ngAfterViewInit() {
-    this.headerComponent.title = "Rooms View";
+    this.headerComponent.title = "Rooms view"
     this.headerChildrenComponent.last.title = "Last Title";
     console.log('hello');
 
